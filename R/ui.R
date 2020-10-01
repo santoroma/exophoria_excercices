@@ -13,21 +13,20 @@ library(shiny)
 shinyUI(fluidPage(
 
     # Application title
-    titlePanel("Old Faithful Geyser Data"),
+    titlePanel("Exophoria Excercises for Michele"),
 
     # Sidebar with a slider input for number of bins
-    sidebarLayout(
-        sidebarPanel(
-            sliderInput("bins",
-                        "Number of bins:",
-                        min = 1,
-                        max = 50,
-                        value = 30)
-        ),
-
+    #sidebarLayout(
+        #sidebarPanel(
+            sliderInput("bpm",
+                        "BPM",
+                        min = 60,
+                        max = 120,
+                        value = 60)
+        #),
+        ,
         # Show a plot of the generated distribution
-        mainPanel(
-            plotOutput("distPlot")
-        )
-    )
+       
+            plotOutput("letter_plot")
+    #)
 ))

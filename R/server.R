@@ -11,16 +11,28 @@ library(shiny)
 
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
-
-    output$distPlot <- renderPlot({
-
+    
+    iter <- reactiveVal(0)
+    output$letter_plot <- renderPlot({
+        library(tidyverse)
+        
         # generate bins based on input$bins from ui.R
-        x    <- faithful[, 2]
-        bins <- seq(min(x), max(x), length.out = input$bins + 1)
-
-        # draw the histogram with the specified number of bins
-        hist(x, breaks = bins, col = 'darkgray', border = 'white')
+       
+        invalidateLater(60/input$bpm*1000)
+        drumr::beat(1,1)
+        #for (i in 1:(input$bpm*3)){  sample(LETTERS,1)
+        isolate({iter(iter()+1)})
+            tibble(x=iter()%%2,y=1,
+                   label= sample(LETTERS,1)) %>%
+                   # label= iter_prog) %>% 
+                ggplot(aes(x,y)) +
+                geom_text(aes(label = label), 
+                          fontface= "bold",
+                          size = 18) + 
+                xlim(0,1) + 
+                theme_void()
+        #}
 
     })
-
+   
 })
