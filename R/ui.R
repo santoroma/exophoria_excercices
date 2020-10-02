@@ -13,7 +13,7 @@ library(shiny)
 shinyUI(fluidPage(
 
     # Application title
-    titlePanel("Exophoria Excercises for Michele"),
+    titlePanel("Anti-Exophoria Excercises for Michele"),
 
     # Sidebar with a slider input for number of bins
     #sidebarLayout(
