@@ -19,7 +19,8 @@ shinyServer(function(input, output) {
         # generate bins based on input$bins from ui.R
        
         invalidateLater(60/input$bpm*1000)
-        drumr::beat(1,1)
+        #drumr::beat(1,1)
+        beepr::beep(sound = 1)
         #for (i in 1:(input$bpm*3)){  sample(LETTERS,1)
         isolate({iter(iter()+1)})
             tibble(x=iter()%%2,y=1,
