@@ -6,7 +6,11 @@
 #
 #    http://shiny.rstudio.com/
 #
-
+### Inserire variabilità su l'asse x
+### aumentare i bpm fino a 150
+### mischiare lettere e numeri con frequenza diversa
+### 10% numeri e 90% lettere
+### durata max 60 stimoli
 library(shiny)
 
 # Define server logic required to draw a histogram
