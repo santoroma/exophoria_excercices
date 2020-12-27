@@ -11,6 +11,7 @@
 ### mischiare lettere e numeri con frequenza diversa
 ### 10% numeri e 90% lettere
 ### durata max 60 stimoli
+### possibilita di escludere il sonoro
 library(shiny)
 
 # Define server logic required to draw a histogram
